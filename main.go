@@ -2,7 +2,7 @@ package main
 
 import (
 	"awesomeProject/accessModifiers"
-	_ "awesomeProject/accessModifiers"
+	enum "awesomeProject/enum"
 	"fmt"
 )
 
@@ -13,4 +13,7 @@ func main() {
 	fmt.Println(accessModifiers.Version)
 	//public getter func
 	fmt.Println(accessModifiers.GetName())
+	//Enum example
+	enum.PrintBrand(enum.BMW)
+	enum.PrintBrand(enum.MERCEDES)
 }
