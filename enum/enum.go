@@ -11,5 +11,5 @@ const (
 )
 
 func PrintBrand(brand Brand) {
-	fmt.Print(brand)
+	fmt.Println(brand)
 }
