@@ -2,7 +2,7 @@ package main
 
 import (
 	"awesomeProject/accessModifiers"
-	enum "awesomeProject/enum"
+	"awesomeProject/enum"
 	"fmt"
 	"reflect"
 	"strconv"
@@ -36,4 +36,10 @@ func main() {
 	myInt := 64
 	myFloat := float64(myInt)
 	fmt.Println(reflect.TypeOf(myInt), "to", reflect.TypeOf(myFloat))
+
+	// formatter
+	// https://pkg.go.dev/fmt
+	myString3 := "alfa"
+	fmt.Printf("Data types : %T \n", myString3)
+	fmt.Printf("Value of myString3 variable : %v \n", myString3)
 }
