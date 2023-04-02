@@ -74,4 +74,20 @@ func main() {
 	fmt.Println("Timestamp : ", nextYear.Unix())
 	now := time.Now()
 	fmt.Printf("The time now is : %s\n", now)
+
+	// if condition block
+	a := 20
+	b := 10
+
+	if a < b {
+		fmt.Println("a smaller than b")
+	} else if a > b {
+		fmt.Println("a bigger than b")
+	} else {
+		fmt.Println("a equals b")
+	}
+	// variable definition at if scope
+	if x, y := 10, 20; x < y {
+		fmt.Println("Variables of x and y can only be called in the if scope.")
+	}
 }
