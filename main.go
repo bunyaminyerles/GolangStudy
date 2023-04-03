@@ -90,4 +90,30 @@ func main() {
 	if x, y := 10, 20; x < y {
 		fmt.Println("Variables of x and y can only be called in the if scope.")
 	}
+
+	// switch condition
+	city := "Ankara"
+	switch city {
+	case "Ankara":
+		fmt.Println("This city is Ankara")
+	case "Istanbul":
+		fmt.Println("This city is Istanbul")
+	default:
+		fmt.Println("This city is not found")
+	}
+	grade := 75
+	switch {
+	case grade >= 0 && grade <= 59:
+		fmt.Println("Your alphanumeric grade is F")
+	case grade > 59 && grade <= 69:
+		fmt.Println("Your alphanumeric grade is D")
+	case grade > 69 && grade <= 79:
+		fmt.Println("Your alphanumeric grade is C")
+	case grade > 79 && grade <= 89:
+		fmt.Println("Your alphanumeric grade is B")
+	case grade > 89 && grade <= 100:
+		fmt.Println("Your alphanumeric grade is A")
+	default:
+		fmt.Println("Your grade is invalid")
+	}
 }
