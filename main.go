@@ -116,4 +116,43 @@ func main() {
 	default:
 		fmt.Println("Your grade is invalid")
 	}
+
+	// break, continue, goto keywords
+	// break
+	fmt.Print("i values :")
+	i := 0
+	for {
+		if i >= 3 {
+			break
+		}
+		fmt.Print(i, "\t")
+		i++
+	}
+	fmt.Print("\n")
+	// continue
+	fmt.Print("i values :")
+	for i := 0; i < 7; i++ {
+		if i%3 == 0 {
+			continue
+		}
+		if i == 5 {
+			break
+		}
+		fmt.Print(i, "\t")
+	}
+	fmt.Print("\n")
+	// goto
+	fmt.Print("i values :")
+	for i := 0; i < 7; i++ {
+		if i%3 == 0 {
+			continue
+		}
+		goto PRINT
+		if i == 5 {
+			break
+		}
+	PRINT:
+		fmt.Print(i, "\t")
+	}
+	fmt.Print("\n")
 }
