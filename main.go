@@ -155,4 +155,38 @@ func main() {
 		fmt.Print(i, "\t")
 	}
 	fmt.Print("\n")
+
+	// loop
+	// for
+	fmt.Println("Loop \nfor")
+	fmt.Print("Values : ")
+	for i := 0; i <= 5; i++ {
+		fmt.Print(i, "\t")
+	}
+	fmt.Print("\n")
+	// while
+	fmt.Println("while")
+	fmt.Print("Values : ")
+	j := 1
+	for j < 10 {
+		fmt.Print(j, "\t")
+		j += j
+	}
+	fmt.Print("\n")
+	// range array example
+	fmt.Println("Print the exponents of 2 with 'range'.")
+	var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+	// range map example
+	capitals := map[string]string{"Turkey": "Ankara", "France": "Paris", "Italy": "Rome"}
+	for country := range capitals {
+		fmt.Printf("The capital of %s is %s\n", country, capitals[country])
+	}
+	// range string example
+	myString6 := "golang"
+	for i := range myString6 {
+		fmt.Println(i, myString6[i])
+	}
 }
