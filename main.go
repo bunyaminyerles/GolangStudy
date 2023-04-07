@@ -3,7 +3,9 @@ package main
 import (
 	"awesomeProject/accessModifiers"
 	"awesomeProject/enum"
+	"errors"
 	"fmt"
+	"os"
 	"reflect"
 	"strconv"
 	"time"
@@ -189,4 +191,16 @@ func main() {
 	for i := range myString6 {
 		fmt.Println(i, myString6[i])
 	}
+
+	// error handling
+	result, err := os.Open("test.txt")
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
+	// create error object
+	myError := errors.New("This is my error")
+	fmt.Println(myError.Error())
+
 }
