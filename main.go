@@ -203,4 +203,41 @@ func main() {
 	myError := errors.New("This is my error")
 	fmt.Println(myError.Error())
 
+	// array
+	var colors = []string{"red", "green", "blue"}
+	fmt.Println(colors)
+	colors = append(colors, "yellow")
+	fmt.Println(colors)
+	colors = append(colors[1:len(colors)])
+	fmt.Println(colors)
+	// array with make
+	myArray := make([]int, 5, 5)
+	myArray[0] = 1
+	myArray[1] = 2
+	myArray[2] = 3
+	myArray[3] = 4
+	myArray[4] = 5
+	fmt.Println(myArray)
+	fmt.Println("append before len : ", len(myArray))
+	fmt.Println("append before cap : ", cap(myArray))
+	myArray = append(myArray, 6)
+	fmt.Println(myArray)
+	fmt.Println("append after len : ", len(myArray))
+	fmt.Println("append after cap : ", cap(myArray))
+	// array with initialization
+	myArray2 := [5]int{1, 2, 3, 4, 5}
+	fmt.Println(myArray2)
+	// array with initialization and ...
+	myArray3 := [...]int{1, 2, 3, 4, 5}
+	fmt.Println(myArray3)
+	// array with initialization and index
+	myArray4 := [...]int{1: 1, 3: 2, 5: 3}
+	fmt.Println(myArray4)
+	// slice
+	mySlice := myArray[1:4]
+	fmt.Println(mySlice)
+	mySlice2 := myArray[1:]
+	fmt.Println(mySlice2)
+	mySlice3 := myArray[:4]
+	fmt.Println(mySlice3)
 }
