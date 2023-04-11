@@ -8,7 +8,9 @@ import (
 	"os"
 	"reflect"
 	"strconv"
+	"strings"
 	"time"
+	"unicode"
 )
 
 func main() {
@@ -279,4 +281,39 @@ func main() {
 	for _, v := range list {
 		fmt.Println(myMap3[v])
 	}
+
+	// strings package
+	fmt.Print("\nStrings package \n")
+	fmt.Println(strings.Contains("golang", "go"))
+	fmt.Println(strings.Count("golang", "o"))
+	fmt.Println(strings.HasPrefix("golang", "go"))
+	fmt.Println(strings.HasSuffix("golang", "lang"))
+	fmt.Println(strings.Index("golang", "l"))
+	fmt.Println(strings.Join([]string{"golang", "python", "java"}, "-"))
+	fmt.Println(strings.Repeat("golang\t", 3))
+	fmt.Println(strings.Replace("golang golang", "go", "python", 2))
+	fmt.Println(strings.Split("golang-python-java", "-"))
+	fmt.Println(strings.ToLower("GOLANG"))
+	fmt.Println(strings.ToUpper("golang"))
+	fmt.Println(strings.TrimSpace(" golang "))
+	fmt.Println(strings.Trim("golang", "g"))
+	fmt.Println(strings.TrimLeft("golang", "g"))
+	fmt.Println(strings.TrimRight("golang", "g"))
+	fmt.Println(strings.Fields("golang python java"))
+	fmt.Println(strings.FieldsFunc("golang,python,java", func(r rune) bool {
+		return r == ','
+	}))
+	fmt.Println(strings.SplitAfter("golang-python-java", "-"))
+	fmt.Println(strings.SplitAfterN("golang-python-java", "-", 2))
+	fmt.Println(strings.SplitN("golang-python-java", "-", 2))
+	fmt.Println(strings.Title("golang python java"))
+	fmt.Println(strings.ToTitle("golang python java"))
+	fmt.Println(strings.ToTitleSpecial(unicode.TurkishCase, "dünyanın ilk borsa yapısı Aizonai kabul edilir"))
+	fmt.Println(strings.TrimPrefix("golang", "go"))
+	fmt.Println(strings.TrimSuffix("golang", "lang"))
+	fmt.Println(strings.Compare("golang", "golang"))
+	fmt.Println(strings.EqualFold("golang", "GOLANG"))
+	fmt.Println(strings.NewReplacer("golang", "python", "python", "java").Replace("golang python"))
+	fmt.Println(strings.ReplaceAll("golang python", "golang", "python"))
+
 }
