@@ -240,4 +240,43 @@ func main() {
 	fmt.Println(mySlice2)
 	mySlice3 := myArray[:4]
 	fmt.Println(mySlice3)
+
+	// map
+	myMap := make(map[string]string)
+	myMap["name"] = "golang"
+	myMap["version"] = "1.14.2"
+	fmt.Println(myMap)
+	fmt.Println(myMap["name"])
+	fmt.Println(myMap["version"])
+	// map with initialization
+	myMap2 := map[string]string{"name": "golang", "version": "1.14.2"}
+	fmt.Println(myMap2)
+	// delete map
+	delete(myMap2, "name")
+	fmt.Println(myMap2)
+	// map with struct
+	type Person struct {
+		name    string
+		surname string
+		age     int
+	}
+	myMap3 := make(map[string]Person)
+	myMap3["person1"] = Person{"golang", "gopher", 1}
+	myMap3["person2"] = Person{"python", "snake", 2}
+	fmt.Println(myMap3)
+	fmt.Println(myMap3["person1"])
+	fmt.Println(myMap3["person2"])
+	// map traverse
+	for key, value := range myMap3 {
+		fmt.Println(key, value)
+	}
+	// map traverse with key
+	list := make([]string, 0, len(myMap3))
+	for key := range myMap3 {
+		list = append(list, key)
+	}
+	fmt.Println(list)
+	for _, v := range list {
+		fmt.Println(myMap3[v])
+	}
 }
