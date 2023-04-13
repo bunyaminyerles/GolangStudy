@@ -316,4 +316,79 @@ func main() {
 	fmt.Println(strings.NewReplacer("golang", "python", "python", "java").Replace("golang python"))
 	fmt.Println(strings.ReplaceAll("golang python", "golang", "python"))
 
+	// function
+	fmt.Print("\nFunction \n")
+	fmt.Println(add(1, 2, "sum"))
+	fmt.Println(add(1, 2, "sub"))
+	fmt.Println(add(1, 2, "mul"))
+	fmt.Println(add(1, 2, "div"))
+	fmt.Println(add(1, 2, "other"))
+	// named return
+	fmt.Println(namedReturn(1, 2, "sum"))
+	// function multiple return
+	myString7, myString8 := "alfa", "beta"
+	myString7, myString8 = swap(myString7, myString8)
+	fmt.Println(myString7, myString8)
+	// function with multiple variable
+	fmt.Println("Total : ", totalVariable(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+	// function with pointer
+	var message string = "golang"
+	pointerFunc(&message)
+	fmt.Println(message)
+	// function with defer
+	deferFunc()
+}
+
+// get pointer of variable
+func pointerFunc(message *string) {
+	fmt.Println(*message)
+	*message = "python"
+}
+
+// function
+func add(x, y int, z string) int {
+	if z == "sum" {
+		return x + y
+	} else if z == "sub" {
+		return x - y
+	} else if z == "mul" {
+		return x * y
+	} else if z == "div" {
+		return x / y
+	} else {
+		return 0
+	}
+}
+
+func namedReturn(x, y int, z string) (result int) {
+	if z == "sum" {
+		result = x + y
+	} else if z == "sub" {
+		result = x - y
+	} else if z == "mul" {
+		result = x * y
+	} else if z == "div" {
+		result = x / y
+	} else {
+		result = 0
+	}
+	return
+}
+
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
+func totalVariable(variables ...int) int {
+	total := 0
+	for _, v := range variables {
+		total += v
+	}
+	return total
+}
+
+func deferFunc() {
+	fmt.Println("first line")
+	defer fmt.Println("middle line (defer)")
+	fmt.Println("last line")
 }
