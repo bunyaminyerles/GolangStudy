@@ -13,6 +13,23 @@ import (
 	"unicode"
 )
 
+type Employee struct {
+	FirstName string
+	LastName  string
+	Age       int
+	Degree    string
+}
+
+// NewEmployeeWithAllArgs Employee all args constructor
+func NewEmployeeWithAllArgs(firstName string, lastName string, age int, degree string) Employee {
+	return Employee{FirstName: firstName, LastName: lastName, Age: age, Degree: degree}
+}
+
+// NewEmployeeWithNoArgs Employee no args constructor
+func NewEmployeeWithNoArgs() Employee {
+	return Employee{}
+}
+
 func main() {
 	// Hello world
 	fmt.Println("Hello world")
@@ -337,6 +354,23 @@ func main() {
 	fmt.Println(message)
 	// function with defer
 	deferFunc()
+
+	// struct
+	employee := Employee{FirstName: "golang", LastName: "gopher", Age: 1, Degree: "bachelor"}
+	fmt.Println(employee)
+	// create struct with new
+	employee2 := new(Employee)
+	employee2.FirstName = "python"
+	employee2.LastName = "snake"
+	employee2.Age = 2
+	employee2.Degree = "master"
+	fmt.Println(*employee2)
+	// create struct with all args constructor
+	employee3 := NewEmployeeWithAllArgs("java", "coffee", 3, "doctor")
+	fmt.Println(employee3)
+	// create struct with no args constructor
+	employee4 := NewEmployeeWithNoArgs()
+	fmt.Println(employee4)
 }
 
 // get pointer of variable
