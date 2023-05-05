@@ -1,0 +1,1 @@
+{"ID":1,"FirstName":"John","LastName":"Smith","UserName":"jsmith","Gender":"Male","Name":{"Family":"Smith","Personal":"John"},"Email":[{"ID":1,"Kind":"home","Address":"john@home.com"},{"ID":2,"Kind":"work","Address":"john@work.com"}],"Interest":[{"ID":1,"Name":"Music"},{"ID":2,"Name":"Basketball"}]}
